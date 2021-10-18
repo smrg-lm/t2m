@@ -22,11 +22,11 @@ Install
 -------
 
 This is a command line application that has to be installed and run manually.
-`python`, `git` and `ffmpeg` commands must be accesible from a terminal.
+`python`, `git` and `ffmpeg` commands must be accessible from a terminal.
 
 1. Install SuperCollider: https://supercollider.github.io/download
 
-   Run the SuperCollider IDE and boot the server at least once to enable network
+   Run the SuperCollider's IDE and boot the server at least once to enable network
    permissions for the server and quit the IDE. The IDE is not needed later.
 
 2. Install ffmpeg command.
@@ -96,7 +96,7 @@ containing only two files: freesounds_v2.yaml and twitter_v1.yaml that in turn
 contain the keys and secrets to use the app. Blueprints of these files are
 provided.
 
-Info-ZIP on Linux will compress and encrypt with this command:
+Info-ZIP on Linux will compress and encrypt the files with this command:
 
 ```bash
 zip -e credentials.zip freesound_v2.yaml twitter_v1.yaml
@@ -112,7 +112,7 @@ A few run time parameters can be configured using the `config.yaml` file.
 hashtag: '#t2mtest'            # a str with the hastag or search query for Twitter API
 select: [ADJ, NOUN]            # a list of word types (without quotes) for spacy analysis
 filter: 'duration:[15 TO 30]'  # Freesound API search filters
-search_wait_time: 15           # a number as wait time between searchs (also initial wait time)
+search_wait_time: 15           # a number as wait time between searches (also initial wait time)
 tweet_dur: 40                  # a number as the duration of shown tweets if sounds were found
 credentials: 'credentials.zip' # the filename of the credentials file
 ```
@@ -146,9 +146,9 @@ Run
 
     The password for credentials.zip file will be prompted in the terminal
     then the app creates a window that can be placed in another screen for
-    proyection. The window has two keyboard actions, `F` to toggle full screen
+    projection. The window has two keyboard actions, `F` to toggle full screen
     and `Esc` to exit the app. All runtime log information will post in the
-    running terminal for monitoriong.
+    running terminal for monitoring.
 
 
 Links
