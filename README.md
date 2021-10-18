@@ -154,15 +154,15 @@ Run
 Links
 -----
 
-- Python
+- https://www.python.org/downloads
 
-- git
+- https://git-scm.com/downloads
 
-- ffmpeg
+- https://www.ffmpeg.org/download.html
 
-- SuperCollider
+- https://supercollider.github.io/download
 
-- Info-ZIP
+- http://infozip.sourceforge.net or any other standard zip utility
 
 - https://docs.tweepy.org/en/stable/api.html#API.search
 - https://developer.twitter.com/en/docs/twitter-api/v1/tweets/search/api-reference/get-search-tweets
