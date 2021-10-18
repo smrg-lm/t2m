@@ -1,0 +1,7 @@
+
+hashtag: '#t2mtest'
+select: [ADJ, NOUN]
+filter: 'duration:[15 TO 30] ac_loudness:[-48 TO -14]'
+search_wait_time: 15
+tweet_dur: 40
+credentials: 'credentials.zip'
