@@ -72,7 +72,7 @@ This is a command line application that has to be installed and run manually.
     Upgrade pip:
 
     ```
-    python pip install pip --upgrade
+    python -m pip install pip --upgrade
     ```
 
 6. Install required packages with t2mvenv activated
