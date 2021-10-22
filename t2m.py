@@ -127,10 +127,10 @@ class TwitterV1():
 
 
 class Analysis():
-    nlp = spacy.load('en_core_web_sm')
+    # nlp = spacy.load('en_core_web_sm')
 
     def __init__(self):
-        # self.nlp = spacy.load('en_core_web_sm')  # It interferes with Qt if called after View() creation, to much weird for me.
+        self.nlp = spacy.load('en_core_web_sm')
         self.hashtag_pattern = re.compile(r"\#\S+")
         self.link_pattern = re.compile(r"http\S+")
         self.replacement = lambda match: ' ' * len(match.group())
@@ -462,14 +462,14 @@ class TweetPlayer(QtCore.QObject):
         super().__init__()
         self._id = type(self)._object_id
         type(self)._object_id += 1
-        self.view = View.global_instance
+        global_view = View.global_instance
 
-        self._create_signal.connect(view._create_TweetPlayer)
+        self._create_signal.connect(global_view._create_TweetPlayer)
         self._create_signal.emit(self._id, text, dur)
 
-        self._play_signal.connect(view._play_tweet)
-        self._word_signal.connect(view._play_word)
-        self._stop_signal.connect(view._stop_tweet)
+        self._play_signal.connect(global_view._play_tweet)
+        self._word_signal.connect(global_view._play_word)
+        self._stop_signal.connect(global_view._stop_tweet)
 
     def play(self):
         self._play_signal.emit(self._id)
