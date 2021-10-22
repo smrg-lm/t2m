@@ -614,10 +614,15 @@ def load_config():
         return Config(**yaml.safe_load(file.read()))
 
 
+# def load_credentials(file_name):
+#     with zipfile.ZipFile(CREDENTIALS_FILE) as zf:
+#         with zf.open(file_name, pwd=bytes(PASSWORD, 'utf8')) as file:
+#             return yaml.safe_load(file.read())
+
+
 def load_credentials(file_name):
-    with zipfile.ZipFile(CREDENTIALS_FILE) as zf:
-        with zf.open(file_name, pwd=bytes(PASSWORD, 'utf8')) as file:
-            return yaml.safe_load(file.read())
+    with open(file_name, 'r') as file:
+        return yaml.safe_load(file.read())
 
 
 if __name__ == '__main__':
