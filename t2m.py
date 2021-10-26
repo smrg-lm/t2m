@@ -127,10 +127,10 @@ class TwitterV1():
 
 
 class Analysis():
-    nlp = spacy.load('en_core_web_sm')
+    # nlp = spacy.load('en_core_web_sm')
 
     def __init__(self):
-        # self.nlp = spacy.load('en_core_web_sm')
+        self.nlp = spacy.load('en_core_web_sm')
         self.hashtag_pattern = re.compile(r"\#\S+")
         self.link_pattern = re.compile(r"http\S+")
         self.replacement = lambda match: ' ' * len(match.group())
