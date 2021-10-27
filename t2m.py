@@ -537,7 +537,7 @@ class SoundPlayer():
                 dur=sc.LFNoise2.kr(0.5).range(0.01, 1),
                 input=src2,
                 pan=sc.LFNoise2.kr(1) * 0.75,
-            ) * 0.1  # HARDCODED
+            ) * 0.5  # HARDCODED
 
             env = sc.EnvGen.kr(
                 env=sc.Env.linen(fadein, dur - fadein - fadeout, fadeout),
