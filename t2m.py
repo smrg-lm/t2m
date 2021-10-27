@@ -19,8 +19,8 @@ import tweepy
 import spacy
 import freesound
 import ffmpeg
-from PySide2 import QtCore, QtGui, QtWidgets, QtMultimedia, QtMultimediaWidgets
-from PySide2.QtCore import QPointF, QSizeF, QRectF
+from PySide6 import QtCore, QtGui, QtWidgets #, QtMultimedia, QtMultimediaWidgets
+from PySide6.QtCore import QPointF, QSizeF, QRectF
 
 
 # tweets: [
@@ -284,22 +284,22 @@ class View(QtWidgets.QGraphicsView):
         self.scene().addItem(self.rect_item)
         self.background_item = self.rect_item
 
-    def _init_background2(self):
-        # Incomplete, needs a path and load on or more mp4.
-        self.video_playlist = QtMultimedia.QMediaPlaylist()
-        self.video_playlist.addMedia(QtCore.QUrl.fromLocalFile('*** PATH ***'))
-        self.video_playlist.setCurrentIndex(1)
-        self.video_playlist.setPlaybackMode(QtMultimedia.QMediaPlaylist.Loop)  # { CurrentItemOnce, CurrentItemInLoop, Sequential, Loop, Random }
-        self.video_player = QtMultimedia.QMediaPlayer()
-        self.video_player.setMuted(True)
-        self.video_player.setPlaylist(self.video_playlist)
-        self.video_item = QtMultimediaWidgets.QGraphicsVideoItem()
-        self.video_item.setPos(self._scene_pos)
-        self.video_item.setSize(self._scene_size)
-        self.video_player.setVideoOutput(self.video_item)
-        self.scene().addItem(self.video_item)
-        self.video_player.play()
-        self.background_item = self.video_item
+    # def _init_background2(self):
+    #     # Incomplete, needs a path and load on or more mp4.
+    #     self.video_playlist = QtMultimedia.QMediaPlaylist()
+    #     self.video_playlist.addMedia(QtCore.QUrl.fromLocalFile('*** PATH ***'))
+    #     self.video_playlist.setCurrentIndex(1)
+    #     self.video_playlist.setPlaybackMode(QtMultimedia.QMediaPlaylist.Loop)  # { CurrentItemOnce, CurrentItemInLoop, Sequential, Loop, Random }
+    #     self.video_player = QtMultimedia.QMediaPlayer()
+    #     self.video_player.setMuted(True)
+    #     self.video_player.setPlaylist(self.video_playlist)
+    #     self.video_item = QtMultimediaWidgets.QGraphicsVideoItem()
+    #     self.video_item.setPos(self._scene_pos)
+    #     self.video_item.setSize(self._scene_size)
+    #     self.video_player.setVideoOutput(self.video_item)
+    #     self.scene().addItem(self.video_item)
+    #     self.video_player.play()
+    #     self.background_item = self.video_item
 
     def update_view_scale(self):
         self.fitInView(self.background_item.boundingRect(), QtCore.Qt.KeepAspectRatio)
