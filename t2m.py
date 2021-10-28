@@ -250,13 +250,17 @@ class T2M():
 class View(QtWidgets.QGraphicsView):
     global_instance = None
 
-    def __new__(cls):
-        if cls.global_instance is not None:
-            raise Exception('View object already active')
-        cls.global_instance = super().__new__(cls)
-        return cls.global_instance
+    # def __new__(cls):  # Maybe Qt uses this method differently, maybe there is a bug somewere else.
+    #     if cls.global_instance is not None:
+    #         raise Exception('View object already active')
+    #     cls.global_instance = super().__new__(cls)
+    #     return cls.global_instance
 
     def __init__(self):
+        if type(self).global_instance is not None:
+            raise Exception('View object already active')
+        type(self).global_instance = self
+
         QtWidgets.QGraphicsView.__init__(self)
 
         scene = QtWidgets.QGraphicsScene(self)
