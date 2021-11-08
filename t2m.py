@@ -19,8 +19,10 @@ import tweepy
 import spacy
 import freesound
 import ffmpeg
-from PySide6 import QtCore, QtGui, QtWidgets #, QtMultimedia, QtMultimediaWidgets
-from PySide6.QtCore import QPointF, QSizeF, QRectF
+from PySide2 import QtCore, QtGui, QtWidgets #, QtMultimedia, QtMultimediaWidgets
+from PySide2.QtCore import QPointF, QSizeF, QRectF
+# from PySide6 import QtCore, QtGui, QtWidgets #, QtMultimedia, QtMultimediaWidgets
+# from PySide6.QtCore import QPointF, QSizeF, QRectF
 
 
 # tweets: [
